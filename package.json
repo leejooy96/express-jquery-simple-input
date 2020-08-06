@@ -1,0 +1,22 @@
+{
+  "name": "electron-express-jquery-simple-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production npm run client",
+    "dev": "npm run client",
+    "client": "nodemon --config nodemon.json client/src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.1",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

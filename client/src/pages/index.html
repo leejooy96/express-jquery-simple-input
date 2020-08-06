@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <title>Express + JQuery Text input</title>
+    <meta name="description" content="Express + JQuery Text input"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .response {
+            height: 350px;
+            max-height: 350px;
+            overflow-y: scroll;
+        }
+        .response > p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-12 my-4">
+                <h1>Express + JQuery Text input</h1>
+            </div>
+            <div class="col-12 my-2">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="input-head">💬</span>
+                    </div>
+                    <input
+                            type="text"
+                            id="request"
+                            class="form-control"
+                            placeholder="Input here"
+                            aria-label="Input here"
+                            aria-describedby="input-head"
+                    >
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body response" id="response"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        const request = $('#request');
+        const response = $('#response');
+
+        request.keypress(e => {
+            if (e.keyCode === 13) {
+                response.append(`<p>${request.val()}</p>`);
+                request.val('');
+                response.scrollTop(response[0].scrollHeight);
+            }
+        });
+    });
+</script>
+</html>
