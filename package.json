@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production npm run client",
-    "dev": "npm run client",
-    "client": "nodemon --config nodemon.json client/src"
+    "start": "cross-env NODE_ENV=production npm run client-production",
+    "dev": "npm run client-dev",
+    "client-production": "nodemon --config nodemon.json client/src",
+    "client-dev": "nodemon --config nodemon.json client/src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.1",
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "jquery": "^3.5.1"
   },
